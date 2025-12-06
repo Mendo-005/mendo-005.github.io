@@ -1,4 +1,854 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mario Mendoza - Software Developer</title>
+    <link rel="icon" href="./static/LogoMM.png" type="image/png">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* --- ESTILOS GENERALES --- */
+        :root {
+            /* PALETA SÓLIDA & PASTEL */
+            --bg-color: #ffffff;
+            --light-bg: #f8fafc; /* Gris azulado muy pálido (Pastel neutro) */
+            
+            /* Textos Sólidos */
+            --text-main: #334155; /* Slate 700 - Gris oscuro sólido */
+            --text-heading: #0f172a; /* Slate 900 - Casi negro */
+            
+            /* Acentos Sólidos (Botones, Links, Iconos) */
+            --solid-primary: #4f46e5; /* Indigo Vibrante */
+            --solid-secondary: #db2777; /* Rosa Magenta Sólido */
+            
+            /* Acentos Pasteles (Fondos, Tags, Decoración) */
+            --pastel-primary: #e0e7ff; /* Indigo Pastel */
+            --pastel-secondary: #fce7f3; /* Rosa Pastel */
+            --pastel-green: #dcfce7; /* Verde Pastel para variedad */
+            --solid-green: #166534; /* Verde Sólido para texto de tags */
 
+            --font-main: 'Inter', sans-serif;
+            --font-serif: 'Merriweather', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-main);
+            color: var(--text-main);
+            background-color: var(--bg-color);
+            line-height: 1.7;
+        }
+
+        /* Selección de texto */
+        ::selection {
+            background-color: var(--pastel-primary);
+            color: var(--solid-primary);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* --- HEADER --- */
+        header {
+            padding: 40px 0;
+            text-align: center;
+            background-color: var(--bg-color);
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+        }
+
+        nav a {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 600;
+            color: var(--text-main);
+            position: relative;
+            padding-bottom: 5px;
+        }
+
+        /* Efecto hover suave con barra pastel */
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 4px;
+            background-color: var(--pastel-primary); /* Barra pastel */
+            transition: width 0.3s ease;
+            z-index: -1;
+        }
+
+        nav a:hover {
+            color: var(--solid-primary);
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            text-align: center;
+            padding: 100px 20px 80px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-family: var(--font-serif);
+            font-size: 3.5rem;
+            margin-bottom: 15px;
+            color: var(--text-heading);
+            line-height: 1.1;
+        }
+
+        .hero p.subtitle {
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+            color: var(--solid-secondary); /* Acento Rosa Sólido */
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-weight: 700;
+            background: var(--pastel-secondary); /* Fondo Rosa Pastel */
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 4px;
+        }
+
+        /* Botones Sólidos */
+        .btn {
+            display: inline-block;
+            background-color: var(--solid-primary);
+            color: #fff;
+            padding: 14px 35px;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            border: 2px solid var(--solid-primary);
+            border-radius: 50px; /* Bordes redondeados modernos */
+            cursor: pointer;
+            margin-top: 10px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(79, 70, 229, 0.3); /* Sombra suave del color sólido */
+        }
+
+        .btn:hover {
+            background-color: #fff;
+            color: var(--solid-primary);
+            transform: translateY(-2px);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            color: var(--text-main);
+            border: 2px solid #e2e8f0; /* Borde gris muy suave */
+            padding: 14px 35px;
+            border-radius: 50px;
+            margin-left: 10px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .btn-outline:hover {
+            border-color: var(--text-heading);
+            color: var(--text-heading);
+            background-color: #fff;
+        }
+
+        /* --- ABOUT SECTION --- */
+        .about {
+            padding: 80px 0;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 60px;
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        .about-content {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .about-content h2 {
+            font-family: var(--font-serif);
+            margin-bottom: 25px;
+            font-size: 2.2rem;
+            color: var(--text-heading);
+            position: relative;
+            display: inline-block;
+        }
+        
+        /* Decoración pastel debajo del título */
+        .about-content h2::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 10px;
+            bottom: 5px;
+            left: 0;
+            background-color: var(--pastel-primary);
+            z-index: -1;
+            opacity: 0.6;
+        }
+
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .about-image img {
+            border-radius: 20px; /* Bordes más suaves */
+            max-width: 280px;
+            /* Sombra sólida desplazada */
+            box-shadow: 15px 15px 0px var(--pastel-primary);
+        }
+
+        /* --- EXPERIENCE TIMELINE --- */
+        .experience {
+            padding: 100px 0;
+            background-color: var(--light-bg); /* Fondo pastel neutro */
+        }
+        
+        .section-title {
+            text-align: center;
+            font-family: var(--font-serif);
+            font-size: 2.2rem;
+            margin-bottom: 70px;
+            color: var(--text-heading);
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Línea vertical */
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: #cbd5e1; /* Gris claro sólido */
+            border-radius: 3px;
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 50px;
+            padding-bottom: 60px;
+        }
+
+        .timeline-item:last-child {
+            padding-bottom: 0;
+        }
+
+        /* El punto (dot) */
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -6px;
+            top: 5px;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: var(--solid-primary); /* Azul sólido */
+            border: 3px solid #fff;
+            box-shadow: 0 0 0 3px var(--pastel-primary); /* Halo pastel */
+        }
+
+        .timeline-date {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--solid-secondary); /* Rosa sólido */
+            font-weight: 700;
+            margin-bottom: 8px;
+            display: inline-block;
+            background: #fff;
+            padding: 2px 10px;
+            border-radius: 4px;
+            border: 1px solid var(--pastel-secondary);
+        }
+
+        .timeline-content h3 {
+            font-family: var(--font-serif);
+            font-size: 1.4rem;
+            margin-bottom: 5px;
+            color: var(--text-heading);
+        }
+
+        .timeline-content h4 {
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--solid-primary);
+            margin-bottom: 15px;
+        }
+
+        .timeline-content ul {
+            list-style: none; /* Quitamos default dots */
+            margin-left: 0;
+            margin-bottom: 15px;
+        }
+        
+        .timeline-content li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 8px;
+            color: var(--text-main);
+        }
+
+        /* Custom bullets */
+        .timeline-content li::before {
+            content: '•';
+            color: var(--solid-primary);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        .timeline-skills {
+            font-size: 0.85rem;
+            color: #64748b;
+            margin-top: 15px;
+            background: #fff;
+            padding: 10px 15px;
+            border-radius: 8px;
+            display: inline-block;
+            border: 1px solid #e2e8f0;
+        }
+
+        /* --- SKILLS (TAGS PASTEL) --- */
+        .skills-section {
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 50px;
+            margin-top: 50px;
+        }
+
+        .skill-group {
+            flex: 1;
+            min-width: 250px;
+            text-align: left;
+        }
+
+        .skill-group h3 {
+            font-family: var(--font-serif);
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: var(--text-heading);
+            border-bottom: 2px solid var(--pastel-primary);
+            padding-bottom: 10px;
+            display: inline-block;
+        }
+
+        .tags-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        /* ESTILO CLAVE: Fondo Pastel + Borde/Texto Sólido */
+        .skill-tag {
+            background-color: var(--pastel-primary); /* Fondo Azul Pastel */
+            color: var(--solid-primary); /* Texto Azul Sólido */
+            border: 1px solid transparent;
+            padding: 8px 18px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        /* Variaciones para hacer la paleta más rica */
+        .skill-group:nth-child(2) .skill-tag {
+             background-color: var(--pastel-green);
+             color: var(--solid-green);
+        }
+        
+        .skill-group:nth-child(3) .skill-tag {
+             background-color: var(--pastel-secondary);
+             color: var(--solid-secondary);
+        }
+
+        .skill-tag:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            background-color: #fff;
+            border-color: currentColor; /* El borde toma el color del texto */
+        }
+
+        /* --- PORTFOLIO --- */
+        .portfolio {
+            padding: 100px 0;
+            text-align: center;
+            background-color: #fff; 
+        }
+
+        .portfolio h2 {
+            font-family: var(--font-serif);
+            margin-bottom: 10px;
+            font-size: 2.2rem;
+            color: var(--text-heading);
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); 
+            margin-top: 60px;
+            width: 100%;
+        }
+
+        .portfolio-item {
+            position: relative; 
+            width: 100%;
+            height: 350px; 
+            overflow: hidden;
+            background: #f1f5f9;
+        }
+
+        .portfolio-thumb {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .portfolio-item:hover .portfolio-thumb {
+            transform: scale(1.1);
+        }
+
+        .portfolio-info {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /* Gradiente Sólido: Indigo a Rosa */
+            background: linear-gradient(rgba(0, 140, 255, 0.9));
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+            opacity: 0; 
+            transition: opacity 0.4s ease;
+            text-align: center;
+            backdrop-filter: blur(5px);
+        }
+
+        .portfolio-item:hover .portfolio-info {
+            opacity: 1;
+        }
+
+        .portfolio-item h4 {
+            font-family: var(--font-serif);
+            margin-bottom: 15px;
+            font-size: 1.6rem;
+            color: #fff; 
+        }
+
+        .portfolio-item p {
+            font-size: 1rem;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+        
+        .project-link {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            font-weight: 700;
+            color: var(--solid-primary);
+            background-color: #fff;
+            padding: 12px 28px;
+            border-radius: 50px;
+            transition: transform 0.2s;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        .project-link:hover {
+            transform: scale(1.05);
+            background-color: var(--pastel-primary);
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            padding: 80px 0 40px;
+            background-color: var(--light-bg); /* Fondo pastel */
+            color: var(--text-main);
+        }
+
+        .footer-grid {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 60px;
+        }
+
+        .contact-form {
+            flex: 2;
+            min-width: 300px;
+        }
+
+        .contact-form h3 {
+            font-family: var(--font-serif);
+            margin-bottom: 20px;
+            color: var(--text-heading);
+            font-size: 2rem;
+        }
+
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 18px;
+            margin-bottom: 15px;
+            border: 2px solid transparent;
+            font-family: inherit;
+            background-color: #fff;
+            border-radius: 8px;
+            transition: all 0.3s;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+        }
+        
+        .contact-form input:focus, .contact-form textarea:focus {
+            outline: none;
+            border-color: var(--solid-primary);
+            box-shadow: 0 4px 20px rgba(79, 70, 229, 0.1);
+        }
+
+        .social-links {
+            flex: 1;
+            text-align: right;
+            font-size: 2.2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 20px;
+        }
+        
+        .social-links a {
+            color: var(--text-main);
+            transition: all 0.3s;
+            background: #fff;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .social-links a:hover {
+            color: var(--solid-primary);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(79, 70, 229, 0.15);
+        }
+
+        .footer-copy {
+            text-align: center; 
+            margin-top: 80px; 
+            font-size: 0.9rem; 
+            color: #94a3b8;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 30px;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .about {
+                flex-direction: column-reverse;
+                text-align: center;
+            }
+            .timeline::before {
+                left: 0; 
+            }
+            .portfolio-grid {
+                grid-template-columns: 1fr; 
+            }
+            nav ul {
+                flex-direction: column;
+                gap: 20px;
+            }
+            .footer-grid {
+                flex-direction: column;
+            }
+            .social-links {
+                flex-direction: row;
+                justify-content: center;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero" id="home">
+        <h1>Mario Mendoza</h1>
+        <p class="subtitle">Software Developer</p>
+        
+        <div style="margin-top: 40px;">
+            <a href="#contact" class="btn">Get in Touch</a>
+            <a href="./static/Mario Mendoza Chaparro_CV es.pdf" class="btn btn-outline" download>Download CV</a>
+        </div>
+    </section>
+
+    <section class="about container" id="about">
+        <div class="about-image">
+            <img src="./static/Foto Perfil.png" alt="Mario Mendoza">
+        </div>
+        <div class="about-content">
+            <h2>About me</h2>
+            <p>My name is Mario Mendoza, and I am Mario Mendoza, a Software Developer based in Spain with a passion for solving complex business problems. Currently completing my Higher Degree in Multiplatform Application Development, I am transitioning my career focus toward Data Analysis and Business Intelligence.</p>
+            <br>
+            <p>I combine a meticulous, organized approach with strong technical expertise in Python, SQL, AWS, and Machine Learning. My goal is to bridge the gap between code and strategy using data to drive operational efficiency and financial optimization.</p>
+        </div>
+    </section>
+
+    <section class="experience" id="experience">
+        <div class="container">
+            <h2 class="section-title">Professional Experience</h2>
+            
+            <div class="timeline">
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">Oct 2025 - Present</div>
+                    <div class="timeline-content">
+                        <h3>Timestamp Ambassador</h3>
+                        <h4>Timestamp España</h4>
+                        <p>Member of the inaugural group of the Timestamp Ambassador Program. Responsible for representing the company within the university ecosystem, promoting its culture of innovation, and connecting technology students with professional development and career opportunities at one of the leading companies in the Iberian market.</p>
+                        <p class="timeline-skills"><strong>Skills:</strong> Effective communication, Event planning</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">Jun 2025 - Aug 2025</div>
+                    <div class="timeline-content">
+                        <h3>Software Developer</h3>
+                        <h4>Tabacalera · Full-time</h4>
+                        <p>In my role as a Software Developer at Tabacalera S.L.U., I am at the forefront of the company's digital transformation, specializing in the development of a bespoke Artificial Intelligence project designed to revolutionize our manufacturing environment.</p>
+                        <ul>
+                            <li><strong>AI System Development:</strong> Led the end-to-end development of a specialized AI system, from initial concept to implementation.</li>
+                            <li><strong>Process Automation:</strong> Created solutions that automate manual tasks and enhance production line efficiency.</li>
+                            <li><strong>Custom Solution Engineering:</strong> Worked closely with operators to build tailored AI solutions addressing core bottlenecks.</li>
+                        </ul>
+                        <p class="timeline-skills"><strong>Skills:</strong> Validation, Testing, Machine Learning, Python, JavaScript, HTML5 / CSS3</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">Mar 2025 - Apr 2025</div>
+                    <div class="timeline-content">
+                        <h3>Information Technology Intern</h3>
+                        <h4>Tabacalera · Internship</h4>
+                        <p>During my professional internship at Tabacalera S.L.U., I had the opportunity to contribute to several key projects focused on process optimization and technology enhancement.</p>
+                        <ul>
+                            <li><strong>System Architecture Modernization:</strong> Re-engineered the company's digital file system.</li>
+                            <li><strong>ETL Workflow Optimization:</strong> Analyzed and optimized existing ETL workflows to resolve bottlenecks.</li>
+                            <li><strong>Performance Engineering:</strong> Refactored critical Python scripts for computational efficiency.</li>
+                        </ul>
+                        <p class="timeline-skills"><strong>Skills:</strong> ETL, Data Management, Python, Optimization</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="skills-section" id="skills">
+        <div class="container">
+            <h2 class="section-title" style="margin-bottom: 20px;">Technical Skills</h2>
+            <p style="color:#64748b; margin-bottom: 40px;">Technologies and tools I work with</p>
+
+            <div class="skills-container">
+                <div class="skill-group">
+                    <h3>Languages</h3>
+                    <div class="tags-wrapper">
+                        <span class="skill-tag">Java</span>
+                        <span class="skill-tag">SQL</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">HTML5 / CSS3</span>
+                        <span class="skill-tag">C#</span>
+                    </div>
+                </div>
+
+                <div class="skill-group">
+                    <h3>Data & Cloud</h3>
+                    <div class="tags-wrapper">
+                        <span class="skill-tag">MySQL</span>
+                        <span class="skill-tag">SQL Server</span>
+                        <span class="skill-tag">NoSQL</span>
+                        <span class="skill-tag">MongoDB</span>
+                        <span class="skill-tag">AWS</span>
+                        <span class="skill-tag">Power Bi</span>
+                        <span class="skill-tag">Salesforce</span>
+                    </div>
+                </div>
+
+                <div class="skill-group">
+                    <h3>Tools & Frameworks</h3>
+                    <div class="tags-wrapper">
+                        <span class="skill-tag">Docker</span>
+                        <span class="skill-tag">Git</span>
+                        <span class="skill-tag">AI Development</span>
+                        <span class="skill-tag">API REST Development</span>
+                        <span class="skill-tag">ETL Processes</span>
+                        <span class="skill-tag">Spring</span>
+                        <span class="skill-tag">Hibernate</span>
+                        <span class="skill-tag">Flask</span>
+                        <span class="skill-tag">Microsoft Graph</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="portfolio" id="projects">
+        <div class="container">
+            <h2>My Work</h2>
+            <p style="color: #64748b;">A sample of my projects</p>
+        </div>
+        
+        <div class="portfolio-grid">
+            <div class="portfolio-item">
+                <img src="./static/proyectos/Price Movement Prediction with XGBoost.png" alt="XGBoost" class="portfolio-thumb">
+                <div class="portfolio-info">
+                    <h4>Stock Price Direction Prediction</h4>
+                    <p>Classifying next-day price movements using XGBoost and technical indicators.</p>
+                    <a href="https://github.com/Mendo-005/Quant/tree/main/XgboostStep" target="_blank" class="project-link">View Project</a>
+                </div>
+            </div>
+
+            <div class="portfolio-item">
+                <img src="./static/proyectos/Python Algorithmic Trading Moving Average Strategy.jpeg" alt="Trading Moving Average Strategy" class="portfolio-thumb">
+                <div class="portfolio-info">
+                    <h4>Moving Average Strategy</h4>
+                    <p>Trading strategy implementation based on moving averages for Bitcoin closing prices.</p>
+                    <a href="https://github.com/Mendo-005/Quant/tree/main/MovingAverageCrossover" target="_blank" class="project-link">View Project</a>
+                </div>
+            </div>
+            
+            <div class="portfolio-item">
+                <img src="./static/proyectos/Linear Regresion.png" alt="Linear Regresion" class="portfolio-thumb">
+                <div class="portfolio-info">
+                    <h4>Linear Regression Analysis</h4>
+                    <p>Predicting annual salary based on work experience using simple linear regression.</p>
+                    <a href="https://github.com/Mendo-005/Quant/tree/main/Project22/02%20linerarRegresion" target="_blank" class="project-link">View Project</a>
+                </div>
+            </div>
+            
+            <div class="portfolio-item">
+                <img src="./static/proyectos/ETL Proyect.png" alt="ETL Pipeline" class="portfolio-thumb">
+                <div class="portfolio-info">
+                    <h4>Asynchronous ETL Pipeline Refactoring for Microsoft Graph</h4>
+                    <p>This project refactors an ETL (Extract, Transform, Load) pipeline to retrieve corporate device and application inventory from the Microsoft Graph API.</p>
+                    <a href="https://github.com/Mendo-005/MG_ETL-with-python/tree/main/scripts" target="_blank" class="project-link">View Project</a>
+                </div>
+            </div>
+            
+            <div class="portfolio-item" style="background-color: #0f172a; display: flex; justify-content: center; align-items: center;">
+                 <h4 style="color: rgba(255,255,255,0.3); font-family: var(--font-serif); font-style:italic;">More coming soon</h4>
+            </div>
+            <div class="portfolio-item" style="background-color: #0f172a; display: flex; justify-content: center; align-items: center;">
+                 <h4 style="color: rgba(255,255,255,0.3); font-family: var(--font-serif); font-style:italic;">More coming soon</h4>
+            </div>
+        </div>
+    </section>
+
+    <footer class="container" id="contact">
+        <div class="footer-grid">
+            <div class="contact-form">
+                <h3>Get in touch</h3>
+                <p style="margin-bottom: 30px; color: #64748b;">Do you have a project I can help you with? Let's talk about it.</p>             
+                <form id="contact-form" action="https://formspree.io/f/mdkqdrwy" method="POST">
+
+                    <input type="text" name="name" placeholder="Name" required>
+                    <input type="email" name="email" placeholder="Email Address" required>
+                    <textarea name="message" rows="5" placeholder="Message" required></textarea>
+
+                    <button type="submit" class="btn" id="form-button">Send Message</button>
+
+                    <p id="form-status" style="display: none; margin-top: 15px; font-weight: bold;"></p>
+                </form>
+            </div>
+            
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/mariomendoza19/" target="_blank" title="LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://github.com/Mendo-005" target="_blank" title="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+        </div>
+        
+        <div class="footer-copy">
+            &copy; 2025 Mario Mendoza.
+        </div>
+    </footer>
 
     <script>
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
