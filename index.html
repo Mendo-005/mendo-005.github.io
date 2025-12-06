@@ -3,187 +3,228 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portafolio Mario Mendoza</title>
-    <link rel="icon" href="./static/LogoMM.png" type="image/png">
+    <title>Mario Mendoza - Software Developer</title>
+    <link rel="icon" href="./static/Logo MM.png" type="image/png">  
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<canvas id="stars"></canvas>
-    <!-- Resto del contenido -->
-    <header class="header-inner">
-        <div class="logo">
-            <h1>Mario Mendoza</h1>
-            <p>Software Developer</p>
-        </div>
-        <button class="menu-toggle">☰</button>
-        <nav class="nav">
-            <ul class="nav-list">
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#projects" class="nav-link">Projects</a></li>
-                <li><a href="#skills" class="nav-link">Skills</a></li>
-            </ul>
-            <div class="cv-download">
-                <a href="./static/CV_marioMendoza.pdf" class="cv-button" download>Download CV</a>
-            </div>
-        </nav>
-        <div class="header-links">
-            <a href="https://www.linkedin.com/in/mariomendoza19/" class="footer-link" target="_blank">
-                <img src="./static/icons/linkedin_1051384.png" alt="LinkedIn">
-            </a>
-            <a href="https://github.com/Mendo-005" class="footer-link" target="_blank">
-                <img src="./static/icons/github_1051377.png" alt="GitHub">
-            </a>     
+
+    <header>
+        <div class="container">
+            <nav>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
 
-    <main style="margin-left: 250px;">
-        <section id="about" class="hero">
-            <div class="hero-inner">
-                <div class="hero-img">
-                    <img src="./static/LogoMM.png" alt="Mario Mendoza" class="hero-image">
-                </div>
-                <div class="hero-text">
-                    <h1>Welcome.</h1>
-                    <p>
-                        My name is Mario Mendoza, and I am a software developer from Spain. 
-                        I am currently pursuing a Higher Degree in Multiplatform Application Development, 
-                        with experience in the software development sector. My main strengths include leadership 
-                        and adaptability, enabling me to effectively manage teams and adjust to different environments 
-                        and challenges.
-                    </p><br>
-                    <p>
-                        I am an organized and meticulous individual with a strong ability to solve problems and make 
-                        informed decisions. I am committed to continuous learning and strive to apply my knowledge 
-                        and skills in challenging and collaborative environments.
-                    </p>
-                </div>
-            </div>
-        </section>
+    <section class="hero" id="home">
+        <h1>Mario Mendoza</h1>
+        <p class="subtitle">Software Developer</p>
+        
+        <div style="margin-top: 40px;">
+            <a href="#contact" class="btn">Get in Touch</a>
+            <a href="./static/Mario Mendoza Chaparro_CV es.pdf" class="btn btn-outline" download>Download CV</a>
+        </div>
+    </section>
 
-        <section id="projects" class="projects">
-            <div class="projects-title">
-                <h2>My Work</h2>
-                <p>Here are some of my projects that I have worked on.</p>
-            </div>
-            <div class="projects-grid">
-                <div class="project">
-                    <div class="project-wrap">
-                        <div class="project-info">
-                            <img src="./static/V4_LHC.png" alt="Project 1" class="project-image">
-                            <h3>LHC Project Simulator (Class Project)</h3>
-                            <p>This project is a realistic simulator of the Large Hadron Collider (LHC) that uses JavaScript for the user 
-                                interface and Python with Flask for the backend. The goal is to create an accurate representation of the 
-                                experiments at the LHC and simulate the interactions between subatomic particles.</p>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/Mendo-005/DAM-1/tree/main/V4sim_CERN" class="project-link" target="_blank">View Project</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="project">
-                    <div class="project-wrap">
-                        <div class="project-info">
-                            <img src="./static/Tabac_Web.png" alt="Project 1" class="project-image">
-                            <h3>Cigar Detection System</h3>
-                            <p>Smart system for detecting, verifying, and classifying authentic cigars, 
-                                helping prevent counterfeits and improve quality control worldwide.</p>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/Mendo-005/DAM-1/tree/main/test_web_ai" class="project-link" target="_blank">View Project</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+    <section class="about container" id="about">
+        <div class="about-image">
+            <img src="./static/Foto Perfil.png" alt="Mario Mendoza">
+        </div>
+        <div class="about-content">
+            <h2>About me</h2>
+            <p>My name is Mario Mendoza, and I am Mario Mendoza, a Software Developer based in Spain with a passion for solving complex business problems. Currently completing my Higher Degree in Multiplatform Application Development, I am transitioning my career focus toward Data Analysis and Business Intelligence.</p>
+            <br>
+            <p>I combine a meticulous, organized approach with strong technical expertise in Python, SQL, AWS, and Machine Learning. My goal is to bridge the gap between code and strategy using data to drive operational efficiency and financial optimization.</p>
+        </div>
+    </section>
 
-        <section id="skills" class="skills">
-            <div class="skills-title">
-                <h2>Skills & Technologies</h2>
-                <p>Here are the technologies and tools I work with, organized by categories</p>
-            </div>
+    <section class="experience" id="experience">
+        <div class="container">
+            <h2 class="section-title">Professional Experience</h2>
             
-            <div class="skills-container">
-                <!-- Categoría 1: Lenguajes -->
-                <div class="skill-category">
-                    <h3>Programming Languages</h3>
-                    <div class="skill-items">
-                        <div class="skill-item">
-                            <img src="./static/icons/python_5968286.png" alt="Python" class="skill-icon">
-                            <span class="skill-name">Python</span>
-                        </div>
-                        <div class="skill-item">
-                            <img src="./static/icons/java_5968231.png" alt="Java" class="skill-icon">
-                            <span class="skill-name">Java</span>
-                        </div>
-                        <div class="skill-item">
-                            <img src="./static/icons/js_5968238.png" alt="JavaScript" class="skill-icon">
-                            <span class="skill-name">JavaScript</span>
-                        </div>
-                        <div class="skill-item">
-                            <img src="./static/icons/html5.png" alt="HTML" class="skill-icon" style="filter: brightness(0) invert(1);">
-                            <span class="skill-name">HTML5</span>
-                        </div>
-                    </div>
-                </div>
+            <div class="timeline">
                 
-                <!-- Categoría 2: Bases de Datos -->
-                <div class="skill-category">
-                    <h3>Databases</h3>
-                    <div class="skill-items">
-                        <div class="skill-item">
-                            <img src="./static/icons/mysql_5968254.png" alt="MySQL" class="skill-icon">
-                            <span class="skill-name">MySQL</span>
-                        </div>
-                        <div class="skill-item">
-                            <img src="./static/icons/sql_server.png" alt="Sql_server" class="skill-icon">
-                            <span class="skill-name">SQL Server</span>
-                        </div>
-                        <div class="skill-item">
-                            <img src="./static/icons/azure.png" alt="Azure" class="skill-icon">
-                            <span class="skill-name">Azure</span>
-                        </div>
-                        <div class="skill-item">
-                            <img src="./static/icons/mongodb.png" alt="MongoDB" class="skill-icon"  style="filter: brightness(0) invert(1);">
-                            <span class="skill-name">MongoDB</span>
-                        </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">Oct 2025 - Present</div>
+                    <div class="timeline-content">
+                        <h3>Timestamp Ambassador</h3>
+                        <h4>Timestamp España</h4>
+                        <p>Member of the inaugural group of the Timestamp Ambassador Program. Responsible for representing the company within the university ecosystem, promoting its culture of innovation, and connecting technology students with professional development and career opportunities at one of the leading companies in the Iberian market.</p>
+                        <p class="timeline-skills"><strong>Skills:</strong> Effective communication, Event planning</p>
                     </div>
                 </div>
-                
-                <!-- Categoría 3: Herramientas -->
-                <div class="skill-category">
-                    <h3>Tools & Frameworks</h3>
-                    <div class="skill-items">
-                        <div class="skill-item">
-                            <img src="./static/icons/docker_5969124.png" alt="Docker" class="skill-icon">
-                            <span class="skill-name">Docker</span>
-                        </div>
-                        <div class="skill-item">
-                            <img src="./static/icons/git_1240970.png" alt="Git" class="skill-icon" style="filter: brightness(0) invert(1);">
-                            <span class="skill-name">Git</span>
-                        </div>
-                        <div class="skill-item">
-                            <img src="./static/icons/flask.webp" alt="Flask" class="skill-icon" style="filter: brightness(0) invert(1);">
-                            <span class="skill-name">Flask</span>
-                        </div>
-                        <div class="skill-item">
-                            <img src="./static/icons/IA.png" alt="AI" class="skill-icon" style="filter: brightness(0) invert(1);">
-                            <span class="skill-name">AI Development</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
 
-    <footer style="margin-left: 250px;">
-        <!-- Ajustar el margen izquierdo del footer para que no quede oculto detrás del header -->
-        <div class="footer-inner">
-            <div class="footer-copy">
-                <p>&copy; 2025 Mario Mendoza. All rights reserved.</p>
+                <div class="timeline-item">
+                    <div class="timeline-date">Jun 2025 - Aug 2025</div>
+                    <div class="timeline-content">
+                        <h3>Software Developer</h3>
+                        <h4>Tabacalera · Full-time</h4>
+                        <p>In my role as a Software Developer at Tabacalera S.L.U., I am at the forefront of the company's digital transformation, specializing in the development of a bespoke Artificial Intelligence project designed to revolutionize our manufacturing environment.</p>
+                        <ul>
+                            <li><strong>AI System Development:</strong> Led the end-to-end development of a specialized AI system, from initial concept to implementation.</li>
+                            <li><strong>Process Automation:</strong> Created solutions that automate manual tasks and enhance production line efficiency.</li>
+                            <li><strong>Custom Solution Engineering:</strong> Worked closely with operators to build tailored AI solutions addressing core bottlenecks.</li>
+                        </ul>
+                        <p class="timeline-skills"><strong>Skills:</strong> Validation, Testing, Machine Learning, Python, JavaScript, HTML5 / CSS3</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">Mar 2025 - Apr 2025</div>
+                    <div class="timeline-content">
+                        <h3>Information Technology Intern</h3>
+                        <h4>Tabacalera · Internship</h4>
+                        <p>During my professional internship at Tabacalera S.L.U., I had the opportunity to contribute to several key projects focused on process optimization and technology enhancement.</p>
+                        <ul>
+                            <li><strong>System Architecture Modernization:</strong> Re-engineered the company's digital file system.</li>
+                            <li><strong>ETL Workflow Optimization:</strong> Analyzed and optimized existing ETL workflows to resolve bottlenecks.</li>
+                            <li><strong>Performance Engineering:</strong> Refactored critical Python scripts for computational efficiency.</li>
+                        </ul>
+                        <p class="timeline-skills"><strong>Skills:</strong> ETL, Data Management, Python, Optimization</p>
+                    </div>
+                </div>
+
             </div>
         </div>
+    </section>
+
+    <section class="skills-section" id="skills">
+        <div class="container">
+            <h2 class="section-title" style="margin-bottom: 20px;">Technical Skills</h2>
+            <p style="color:#64748b; margin-bottom: 40px;">Technologies and tools I work with</p>
+
+            <div class="skills-container">
+                <div class="skill-group">
+                    <h3>Languages</h3>
+                    <div class="tags-wrapper">
+                        <span class="skill-tag">Java</span>
+                        <span class="skill-tag">SQL</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">HTML5 / CSS3</span>
+                        <span class="skill-tag">C#</span>
+                    </div>
+                </div>
+
+                <div class="skill-group">
+                    <h3>Data & Cloud</h3>
+                    <div class="tags-wrapper">
+                        <span class="skill-tag">MySQL</span>
+                        <span class="skill-tag">SQL Server</span>
+                        <span class="skill-tag">NoSQL</span>
+                        <span class="skill-tag">MongoDB</span>
+                        <span class="skill-tag">AWS</span>
+                        <span class="skill-tag">Power Bi</span>
+                        <span class="skill-tag">Salesforce</span>
+                    </div>
+                </div>
+
+                <div class="skill-group">
+                    <h3>Tools & Frameworks</h3>
+                    <div class="tags-wrapper">
+                        <span class="skill-tag">Docker</span>
+                        <span class="skill-tag">Git</span>
+                        <span class="skill-tag">AI Development</span>
+                        <span class="skill-tag">API REST Development</span>
+                        <span class="skill-tag">ETL Processes</span>
+                        <span class="skill-tag">Spring</span>
+                        <span class="skill-tag">Hibernate</span>
+                        <span class="skill-tag">Flask</span>
+                        <span class="skill-tag">Microsoft Graph</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="portfolio" id="projects">
+        <div class="container">
+            <h2>My Work</h2>
+            <p style="color: #64748b;">A sample of my projects</p>
+        </div>
+        
+        <div class="portfolio-grid">
+            <div class="portfolio-item">
+                <img src="./static/proyectos/Price Movement Prediction with XGBoost.png" alt="XGBoost" class="portfolio-thumb">
+                <div class="portfolio-info">
+                    <h4>Stock Price Direction Prediction</h4>
+                    <p>Classifying next-day price movements using XGBoost and technical indicators.</p>
+                    <a href="https://github.com/Mendo-005/Quant/tree/main/XgboostStep" target="_blank" class="project-link">View Project</a>
+                </div>
+            </div>
+
+            <div class="portfolio-item">
+                <img src="./static/proyectos/Python Algorithmic Trading Moving Average Strategy.jpeg" alt="Trading Moving Average Strategy" class="portfolio-thumb">
+                <div class="portfolio-info">
+                    <h4>Moving Average Strategy</h4>
+                    <p>Trading strategy implementation based on moving averages for Bitcoin closing prices.</p>
+                    <a href="https://github.com/Mendo-005/Quant/tree/main/MovingAverageCrossover" target="_blank" class="project-link">View Project</a>
+                </div>
+            </div>
+            
+            <div class="portfolio-item">
+                <img src="./static/proyectos/Linear Regresion.png" alt="Linear Regresion" class="portfolio-thumb">
+                <div class="portfolio-info">
+                    <h4>Linear Regression Analysis</h4>
+                    <p>Predicting annual salary based on work experience using simple linear regression.</p>
+                    <a href="https://github.com/Mendo-005/Quant/tree/main/Project22/02%20linerarRegresion" target="_blank" class="project-link">View Project</a>
+                </div>
+            </div>
+            
+            <div class="portfolio-item">
+                <img src="./static/proyectos/ETL Proyect.png" alt="ETL Pipeline" class="portfolio-thumb">
+                <div class="portfolio-info">
+                    <h4>Asynchronous ETL Pipeline Refactoring for Microsoft Graph</h4>
+                    <p>This project refactors an ETL (Extract, Transform, Load) pipeline to retrieve corporate device and application inventory from the Microsoft Graph API.</p>
+                    <a href="https://github.com/Mendo-005/MG_ETL-with-python/tree/main/scripts" target="_blank" class="project-link">View Project</a>
+                </div>
+            </div>
+            
+            <div class="portfolio-item" style="background-color: #0f172a; display: flex; justify-content: center; align-items: center;">
+                 <h4 style="color: rgba(255,255,255,0.3); font-family: var(--font-serif); font-style:italic;">More coming soon</h4>
+            </div>
+            <div class="portfolio-item" style="background-color: #0f172a; display: flex; justify-content: center; align-items: center;">
+                 <h4 style="color: rgba(255,255,255,0.3); font-family: var(--font-serif); font-style:italic;">More coming soon</h4>
+            </div>
+        </div>
+    </section>
+
+    <footer class="container" id="contact">
+        <div class="footer-grid">
+            <div class="contact-form">
+                <h3>Get in touch</h3>
+                <p style="margin-bottom: 30px; color: #64748b;">Do you have a project I can help you with? Let's talk about it.</p>             
+                <form id="contact-form" action="https://formspree.io/f/mdkqdrwy" method="POST">
+
+                    <input type="text" name="name" placeholder="Name" required>
+                    <input type="email" name="email" placeholder="Email Address" required>
+                    <textarea name="message" rows="5" placeholder="Message" required></textarea>
+
+                    <button type="submit" class="btn" id="form-button">Send Message</button>
+
+                    <p id="form-status" style="display: none; margin-top: 15px; font-weight: bold;"></p>
+                </form>
+            </div>
+            
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/mariomendoza19/" target="_blank" title="LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://github.com/Mendo-005" target="_blank" title="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+        </div>
+        
+        <div class="footer-copy">
+            &copy; 2025 Mario Mendoza.
+        </div>
+        <script src="script.js"></script>
     </footer>
-    
-    <script src="script.js"></script>
-</body>
-</html>
